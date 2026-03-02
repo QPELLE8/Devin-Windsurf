@@ -1,0 +1,1040 @@
+/* ============================
+   MAFIA GAME - FULL STYLES
+   ============================ */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- HOME SCREEN ---- */
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.game-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  color: #c62828;
+  text-shadow: 0 0 40px rgba(198, 40, 40, 0.5), 0 0 80px rgba(198, 40, 40, 0.2);
+  margin-bottom: 0.25rem;
+}
+
+.game-subtitle {
+  font-size: 1.1rem;
+  color: #888;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.input-field {
+  padding: 1rem 1.25rem;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 0.15em;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: #c62828;
+}
+
+.input-field::placeholder {
+  color: #666;
+  letter-spacing: 0.05em;
+}
+
+.error-msg {
+  background: rgba(198, 40, 40, 0.15);
+  border: 1px solid #c62828;
+  color: #ef5350;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  color: #fff;
+}
+
+.btn-icon {
+  font-size: 1.3rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #c62828, #8e0000);
+  box-shadow: 0 4px 20px rgba(198, 40, 40, 0.3);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(198, 40, 40, 0.4);
+}
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid #444;
+}
+.btn-secondary:hover {
+  border-color: #888;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #888;
+}
+.btn-ghost:hover {
+  color: #ccc;
+}
+
+.btn-dark {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 2px solid #333;
+}
+.btn-dark:hover {
+  border-color: #555;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #c62828, #b71c1c);
+}
+.btn-danger:hover {
+  box-shadow: 0 4px 20px rgba(198, 40, 40, 0.4);
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+}
+.btn-blue:hover {
+  box-shadow: 0 4px 20px rgba(21, 101, 192, 0.4);
+}
+
+.btn-green {
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+}
+.btn-green:hover {
+  box-shadow: 0 4px 20px rgba(46, 125, 50, 0.4);
+}
+
+.btn-large {
+  padding: 1.25rem 2rem;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  width: auto;
+}
+
+/* ---- NARRATOR VIEW ---- */
+.narrator-view {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+.narrator-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #222;
+}
+
+.narrator-header h2 {
+  font-size: 1.5rem;
+  color: #c62828;
+  margin-bottom: 0.5rem;
+}
+
+.game-code-display {
+  font-size: 1rem;
+  color: #888;
+}
+
+.game-code-display .code {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.2em;
+  background: rgba(198, 40, 40, 0.15);
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+}
+
+.phase-indicator {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+.phase-indicator span {
+  color: #aaa;
+  text-transform: capitalize;
+}
+
+/* ---- PHASE PANELS ---- */
+.phase-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #222;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.phase-panel h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.night-panel {
+  background: rgba(10, 10, 30, 0.8);
+  border-color: #1a1a3e;
+}
+
+.day-panel {
+  background: rgba(30, 20, 10, 0.5);
+  border-color: #3e2a1a;
+}
+
+.phase-desc {
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* ---- PLAYER LISTS ---- */
+.player-count {
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.player-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.player-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid #333;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+/* ---- ROLE CARDS ---- */
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.role-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+}
+
+.role-card.dead {
+  opacity: 0.4;
+}
+
+.role-name {
+  font-weight: 600;
+}
+
+.role-badge, .badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.role-badge.mafia, .badge.mafia {
+  background: rgba(198, 40, 40, 0.2);
+  color: #ef5350;
+  border: 1px solid rgba(198, 40, 40, 0.4);
+}
+
+.role-badge.sheriff, .badge.sheriff {
+  background: rgba(21, 101, 192, 0.2);
+  color: #42a5f5;
+  border: 1px solid rgba(21, 101, 192, 0.4);
+}
+
+.role-badge.medic, .badge.medic {
+  background: rgba(46, 125, 50, 0.2);
+  color: #66bb6a;
+  border: 1px solid rgba(46, 125, 50, 0.4);
+}
+
+.role-badge.town, .badge.town {
+  background: rgba(255, 255, 255, 0.08);
+  color: #bbb;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.dead-badge {
+  color: #ef5350;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* ---- VOTE ENTRIES ---- */
+.vote-list {
+  margin: 1rem 0;
+}
+
+.vote-entry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.vote-entry .voter {
+  color: #aaa;
+}
+
+.vote-entry .arrow {
+  color: #666;
+}
+
+.vote-entry .target {
+  color: #fff;
+  font-weight: 600;
+}
+
+.vote-entry.small {
+  font-size: 0.85rem;
+  padding: 0.3rem;
+}
+
+.vote-summary {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.vote-summary h4 {
+  margin-bottom: 0.75rem;
+  color: #aaa;
+}
+
+.vote-count-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.confirmed-kill {
+  color: #ef5350;
+  font-weight: 700;
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+}
+
+/* ---- SHERIFF / MEDIC RESULTS ---- */
+.sheriff-result, .medic-result {
+  padding: 1.25rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.sheriff-result.mafia {
+  background: rgba(198, 40, 40, 0.15);
+  border: 2px solid #c62828;
+}
+
+.sheriff-result.town {
+  background: rgba(46, 125, 50, 0.15);
+  border: 2px solid #2e7d32;
+}
+
+.medic-result.saved {
+  background: rgba(46, 125, 50, 0.15);
+  border: 2px solid #2e7d32;
+}
+
+.medic-result.not-saved {
+  background: rgba(198, 40, 40, 0.15);
+  border: 2px solid #c62828;
+}
+
+.result-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+/* ---- NOMINATIONS ---- */
+.nomination-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.nomination-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid #333;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nomination-entry:hover {
+  border-color: #555;
+}
+
+.nomination-entry.selected {
+  border-color: #c62828;
+  background: rgba(198, 40, 40, 0.1);
+}
+
+.nom-name {
+  font-weight: 600;
+}
+
+.nom-count {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* ---- TRIALS ---- */
+.trial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.trial-player, .trial-player-card {
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trial-number {
+  color: #888;
+  font-weight: 700;
+}
+
+.trial-name {
+  font-weight: 600;
+}
+
+.public-votes {
+  margin-top: 1.5rem;
+}
+
+.public-votes h4 {
+  margin-bottom: 0.5rem;
+  color: #aaa;
+}
+
+/* ---- NIGHT ANNOUNCEMENT ---- */
+.night-announcement, .announcement {
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #333;
+}
+
+.night-announcement.death, .death-announcement {
+  background: rgba(198, 40, 40, 0.12);
+  border-color: #c62828;
+}
+
+.night-announcement.saved, .save-announcement {
+  background: rgba(46, 125, 50, 0.12);
+  border-color: #2e7d32;
+}
+
+/* ---- TRIAL RESULT ---- */
+.trial-announcement {
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.role-reveal {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.role-reveal.mafia {
+  color: #ef5350;
+}
+
+.role-reveal.town {
+  color: #66bb6a;
+}
+
+.trial-result-card {
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 1.5rem 0;
+}
+
+.trial-result-card.mafia {
+  background: rgba(198, 40, 40, 0.15);
+  border: 2px solid #c62828;
+}
+
+.trial-result-card.town {
+  background: rgba(46, 125, 50, 0.15);
+  border: 2px solid #2e7d32;
+}
+
+.eliminated-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.eliminated-role {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #aaa;
+}
+
+/* ---- PLAYER VIEW ---- */
+.player-view {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #222;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.player-name-display {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.role-tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.role-tag.mafia {
+  background: rgba(198, 40, 40, 0.2);
+  color: #ef5350;
+}
+.role-tag.sheriff {
+  background: rgba(21, 101, 192, 0.2);
+  color: #42a5f5;
+}
+.role-tag.medic {
+  background: rgba(46, 125, 50, 0.2);
+  color: #66bb6a;
+}
+.role-tag.town {
+  background: rgba(255, 255, 255, 0.08);
+  color: #bbb;
+}
+
+/* ---- CENTER MESSAGE ---- */
+.center-message {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.waiting-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.center-message h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.center-message p {
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+/* ---- ROLE REVEAL ---- */
+.role-reveal-screen {
+  padding: 2rem 1rem;
+}
+
+.role-reveal-card {
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.role-reveal-card.mafia {
+  background: linear-gradient(135deg, rgba(198, 40, 40, 0.2), rgba(142, 0, 0, 0.15));
+  border: 2px solid #c62828;
+  box-shadow: 0 0 40px rgba(198, 40, 40, 0.2);
+}
+
+.role-reveal-card.sheriff {
+  background: linear-gradient(135deg, rgba(21, 101, 192, 0.2), rgba(13, 71, 161, 0.15));
+  border: 2px solid #1565c0;
+  box-shadow: 0 0 40px rgba(21, 101, 192, 0.2);
+}
+
+.role-reveal-card.medic {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.2), rgba(27, 94, 32, 0.15));
+  border: 2px solid #2e7d32;
+  box-shadow: 0 0 40px rgba(46, 125, 50, 0.2);
+}
+
+.role-reveal-card.town {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+  border: 2px solid #444;
+}
+
+.role-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.role-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.role-desc {
+  color: #aaa;
+  font-size: 1rem;
+}
+
+/* ---- SLEEP SCREEN ---- */
+.sleep-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(5, 5, 20, 0.8);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  min-height: 60vh;
+}
+
+.moon-icon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sleep-screen h2 {
+  font-size: 2rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.sleep-screen p {
+  color: #444;
+}
+
+/* ---- ACTION SCREENS ---- */
+.action-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.action-screen h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mafia-screen h2 {
+  color: #ef5350;
+}
+
+.sheriff-screen h2 {
+  color: #42a5f5;
+}
+
+.medic-screen h2 {
+  color: #66bb6a;
+}
+
+.day-screen h2 {
+  color: #ffb74d;
+}
+
+.sun-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+/* ---- PLAYER GRID ---- */
+.player-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.player-vote-btn {
+  padding: 1rem;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.player-vote-btn:hover {
+  transform: scale(1.03);
+}
+
+.mafia-btn:hover {
+  border-color: #c62828;
+  background: rgba(198, 40, 40, 0.15);
+}
+
+.sheriff-btn:hover {
+  border-color: #1565c0;
+  background: rgba(21, 101, 192, 0.15);
+}
+
+.medic-btn:hover {
+  border-color: #2e7d32;
+  background: rgba(46, 125, 50, 0.15);
+}
+
+.nominate-btn:hover {
+  border-color: #ff8f00;
+  background: rgba(255, 143, 0, 0.15);
+}
+
+.vote-btn:hover {
+  border-color: #c62828;
+  background: rgba(198, 40, 40, 0.15);
+}
+
+/* ---- VOTED MESSAGE ---- */
+.voted-message {
+  padding: 2rem;
+  text-align: center;
+}
+
+.voted-message p {
+  color: #aaa;
+}
+
+.all-voted {
+  color: #66bb6a;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.waiting-text {
+  color: #666;
+  font-style: italic;
+}
+
+/* ---- BIG RESULT ---- */
+.big-result {
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin: 2rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.big-result h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.big-result p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #aaa;
+}
+
+.result-mafia {
+  background: linear-gradient(135deg, rgba(198, 40, 40, 0.25), rgba(142, 0, 0, 0.15));
+  border: 3px solid #c62828;
+  box-shadow: 0 0 60px rgba(198, 40, 40, 0.3);
+}
+
+.result-mafia h1 {
+  color: #ef5350;
+}
+
+.result-town {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.25), rgba(27, 94, 32, 0.15));
+  border: 3px solid #2e7d32;
+  box-shadow: 0 0 60px rgba(46, 125, 50, 0.3);
+}
+
+.result-town h1 {
+  color: #66bb6a;
+}
+
+.result-saved {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.25), rgba(27, 94, 32, 0.15));
+  border: 3px solid #2e7d32;
+  box-shadow: 0 0 60px rgba(46, 125, 50, 0.3);
+}
+
+.result-saved h1 {
+  color: #66bb6a;
+}
+
+.result-failed {
+  background: linear-gradient(135deg, rgba(198, 40, 40, 0.25), rgba(142, 0, 0, 0.15));
+  border: 3px solid #c62828;
+  box-shadow: 0 0 60px rgba(198, 40, 40, 0.3);
+}
+
+.result-failed h1 {
+  color: #ef5350;
+  font-size: 5rem;
+}
+
+/* ---- DISAGREE / WAITING ---- */
+.disagree-msg {
+  background: rgba(255, 152, 0, 0.15);
+  border: 1px solid #ff9800;
+  color: #ffb74d;
+  padding: 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.waiting-msg {
+  color: #888;
+  font-style: italic;
+  padding: 1rem;
+}
+
+/* ---- GAME OVER ---- */
+.game-over-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  min-height: 80vh;
+}
+
+.mafia-text {
+  color: #ef5350;
+  font-size: 2.5rem;
+  text-shadow: 0 0 40px rgba(198, 40, 40, 0.5);
+}
+
+.town-text {
+  color: #66bb6a;
+  font-size: 2.5rem;
+  text-shadow: 0 0 40px rgba(46, 125, 50, 0.5);
+}
+
+.final-kill {
+  color: #888;
+  margin: 1rem 0;
+}
+
+.final-roles {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 1.5rem;
+}
+
+/* ---- ROLES REFERENCE (Narrator) ---- */
+.roles-reference {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #222;
+}
+
+.roles-reference h4 {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.roles-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.role-mini {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.85rem;
+}
+
+.role-mini.dead {
+  opacity: 0.35;
+  text-decoration: line-through;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 480px) {
+  .game-title {
+    font-size: 3rem;
+  }
+
+  .player-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .big-result h1 {
+    font-size: 2.5rem;
+  }
+
+  .role-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.role-reveal-card, .big-result, .trial-result-card, .game-over-screen h1 {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.waiting-icon, .moon-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
