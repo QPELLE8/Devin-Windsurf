@@ -1,10 +1,18 @@
 const express = require('express');
 const http = require('http');
+const path = require('path');
 const { Server } = require('socket.io');
 const cors = require('cors');
 
 const app = express();
 app.use(cors());
+
+// Serve static frontend files
+app.use(express.static(path.join(__dirname, '..', 'client', 'dist')));
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/socket.io')) return next();
+  res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'index.html'));
+});
 
 const server = http.createServer(app);
 const io = new Server(server, {

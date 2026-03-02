@@ -5,8 +5,6 @@ import NarratorView from './components/NarratorView'
 import PlayerView from './components/PlayerView'
 import './App.css'
 
-const SOCKET_URL = 'http://localhost:3001'
-
 function App() {
   const [socket, setSocket] = useState(null)
   const [view, setView] = useState('home')
@@ -16,7 +14,7 @@ function App() {
 
   const connectSocket = () => {
     if (socket) return socket
-    const s = io(SOCKET_URL)
+    const s = io()
     setSocket(s)
     return s
   }
