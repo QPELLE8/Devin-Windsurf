@@ -1,0 +1,14 @@
+{
+  "name": "mafia-game",
+  "version": "1.0.0",
+  "description": "Mafia party game with real-time multiplayer",
+  "scripts": {
+    "install:all": "cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "postinstall": "cd client && npm install && npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
