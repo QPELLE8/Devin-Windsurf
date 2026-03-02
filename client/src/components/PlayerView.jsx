@@ -211,10 +211,10 @@ function PlayerView({ socket, gameCode, playerName }) {
           <h2>Your Role</h2>
           <div className={`role-reveal-card ${role.toLowerCase()}`}>
             <div className="role-icon">
-              {role === 'Mafia' && '&#x1F5E1;'}
-              {role === 'Sheriff' && '&#x2B50;'}
-              {role === 'Medic' && '&#x2695;'}
-              {role === 'Town' && '&#x1F3E0;'}
+              {role === 'Mafia' && '🗡️'}
+              {role === 'Sheriff' && '⭐'}
+              {role === 'Medic' && '⚕️'}
+              {role === 'Town' && '🏠'}
             </div>
             <h1 className="role-title">{role === 'Mafia' ? 'Member of The Mafia' : role === 'Town' ? 'Member of The Town' : role}</h1>
             <p className="role-desc">
