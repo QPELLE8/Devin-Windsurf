@@ -692,6 +692,96 @@ io.on('connection', (socket) => {
       // Narrator left - end game
       io.to(code).emit('game-ended', { reason: 'Narrator disconnected' });
       delete games[code];
+      return;
+    }
+
+    // Player disconnected during active game
+    const player = game.players.find(p => p.id === socket.id);
+    if (!player) return;
+
+    if (game.phase === 'lobby') {
+      // Remove from lobby
+      game.players = game.players.filter(p => p.id !== socket.id);
+      io.to(game.narratorId).emit('player-joined', {
+        players: game.players.map(p => ({ name: p.name, id: p.id }))
+      });
+      return;
+    }
+
+    // Mark player as dead if game is in progress
+    if (player.alive) {
+      player.alive = false;
+      io.to(game.narratorId).emit('player-disconnected', {
+        name: player.name,
+        role: game.roles[player.id]
+      });
+
+      // Check if this disconnect causes a win condition
+      const winner = checkWinCondition(game);
+      if (winner) {
+        game.phase = 'game-over';
+        const roleList = game.players.map(p => ({
+          name: p.name,
+          role: game.roles[p.id],
+          alive: p.alive
+        }));
+        io.to(game.code).emit('game-over', {
+          winner,
+          roles: roleList,
+          killedName: player.name + ' (disconnected)',
+          killedRole: game.roles[player.id]
+        });
+        return;
+      }
+
+      // If the disconnected player was expected to vote, check if we can proceed
+      // Mafia vote phase
+      if (game.phase === 'mafia-voting' && game.roles[socket.id] === 'Mafia') {
+        const aliveMafia = game.players.filter(p => p.alive && game.roles[p.id] === 'Mafia');
+        const allVoted = aliveMafia.every(p => game.mafiaVotes[p.id]);
+        if (allVoted && aliveMafia.length > 0) {
+          const voteCounts = {};
+          Object.values(game.mafiaVotes).forEach(tid => {
+            voteCounts[tid] = (voteCounts[tid] || 0) + 1;
+          });
+          const voteDetails = Object.entries(game.mafiaVotes).map(([voterId, targetId]) => ({
+            voter: game.players.find(p => p.id === voterId)?.name,
+            target: game.players.find(p => p.id === targetId)?.name,
+            targetId
+          }));
+          io.to(game.narratorId).emit('mafia-votes-update', {
+            votes: voteDetails,
+            allVoted: true,
+            voteCounts: Object.entries(voteCounts).map(([tid, count]) => ({
+              name: game.players.find(p => p.id === tid)?.name,
+              targetId: tid,
+              count
+            }))
+          });
+        }
+      }
+
+      // Sheriff phase - if disconnected sheriff, notify narrator
+      if (game.phase === 'sheriff-investigating' && game.roles[socket.id] === 'Sheriff') {
+        const aliveSheriffs = game.players.filter(p => p.alive && game.roles[p.id] === 'Sheriff');
+        if (aliveSheriffs.length === 0) {
+          io.to(game.narratorId).emit('sheriff-done', {
+            targetName: 'N/A (Sheriff disconnected)',
+            isMafia: false
+          });
+        }
+      }
+
+      // Medic phase - if disconnected medic, notify narrator
+      if (game.phase === 'medic-saving' && game.roles[socket.id] === 'Medic') {
+        const aliveMedics = game.players.filter(p => p.alive && game.roles[p.id] === 'Medic');
+        if (aliveMedics.length === 0) {
+          io.to(game.narratorId).emit('medic-done', {
+            targetName: 'N/A (Medic disconnected)',
+            saved: false
+          });
+        }
+      }
     }
   });
 });
